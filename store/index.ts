@@ -4,6 +4,7 @@ import {IProduct, INavigatorItem} from '../models/interfaces'
 import {
   CHANGE_CATEGORY_FILTER,
   CHANGE_STAGE_FILTER,
+  CLEAR_ALL_FILTERS
 } from '@/store/mutations.type'
 
 import cowProducts from '~/static/data/products/cow'
@@ -25,6 +26,10 @@ export const state = () => ({
 export type RootState = ReturnType<typeof state>
 
 export const mutations: MutationTree<RootState> = {
+  [CLEAR_ALL_FILTERS]: (state) => {
+    state.categoryFilter = []
+    state.stageFilter = []
+  },
   [CHANGE_CATEGORY_FILTER]: (state, category: CATEGORY) => {
     if (state.categoryFilter.indexOf(category) > -1) {
       state.categoryFilter = state.categoryFilter.filter((f) => f !== category)
@@ -38,6 +43,9 @@ export const mutations: MutationTree<RootState> = {
     } else {
       state.stageFilter.push(stage)
     }
+  },
+  setRoute: (state, name) => {
+    debugger
   }
 }
 

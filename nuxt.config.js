@@ -22,8 +22,10 @@ export default {
     purgeCSSInDev: false,
     exposeConfig: false
   },
-
-  // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
+  router: {
+    middleware: ['routeChange'],
+  },
+// Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
   ],
 
