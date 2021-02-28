@@ -1,36 +1,18 @@
 <template>
-  <div class="w-full h-36 md:h-36 shadow-xs cursor-pointer hover:shadow-md rounded-sm flex">
+  <div class="w-full h-36 md:h-36 shadow-xs cursor-pointer hover:shadow-md rounded-sm flex font-comfortaa">
     <section class="img rounded-sm hidden md:block">
-      <div class="no-photo w-32 h-full text-center opacity-75 bg-gray-200 pt-6">
+      <div v-if="!product.img" class="no-photo w-32 h-full text-center opacity-75 bg-gray-200 pt-6">
         <svg class="opacity-75 block m-auto" height="64" viewBox="0 0 74 74" width="64" xmlns="http://www.w3.org/2000/svg"><path d="m23.5 63.5h-2.94a1 1 0 0 1 0-2h2.94a1 1 0 0 1 0 2z"/><path d="m66 63.5h-25.56a1 1 0 0 1 0-2h25.56a4 4 0 0 0 4-4v-35a4 4 0 0 0 -4-4h-15.26a2.011 2.011 0 0 1 -1.834-1.193l-1.824-4.207a.994.994 0 0 0 -.912-.6h-18.34a.991.991 0 0 0 -.909.591l-1.821 4.209a2.014 2.014 0 0 1 -1.838 1.2h-15.262a4 4 0 0 0 -4 4v35a4 4 0 0 0 4 4h5.56a1 1 0 1 1 0 2h-5.56a6.006 6.006 0 0 1 -6-6v-35a6.006 6.006 0 0 1 6-6h15.26l1.822-4.2a2.975 2.975 0 0 1 2.748-1.8h18.34a2.977 2.977 0 0 1 2.751 1.81l1.817 4.19h15.262a6.006 6.006 0 0 1 6 6v35a6.006 6.006 0 0 1 -6 6z"/><path d="m33.44 63.5h-2.94a1 1 0 0 1 0-2h2.94a1 1 0 0 1 0 2z"/><path d="m18.219 18.5h-7.667a1 1 0 0 1 -1-1v-5.307a1.7 1.7 0 0 1 1.693-1.693h6.281a1.694 1.694 0 0 1 1.693 1.693v5.307a1 1 0 0 1 -1 1zm-6.667-2h5.667v-4h-5.667z"/><path d="m34 55.562a16.312 16.312 0 1 1 16.312-16.312 16.33 16.33 0 0 1 -16.312 16.312zm0-30.624a14.312 14.312 0 1 0 14.312 14.312 14.328 14.328 0 0 0 -14.312-14.312z"/><path d="m34 49.179a9.929 9.929 0 1 1 9.929-9.929 9.94 9.94 0 0 1 -9.929 9.929zm0-17.858a7.929 7.929 0 1 0 7.929 7.929 7.938 7.938 0 0 0 -7.929-7.929z"/><path d="m63.156 30h-8.312a1.846 1.846 0 0 1 -1.844-1.844v-4a1.846 1.846 0 0 1 1.844-1.844h8.312a1.846 1.846 0 0 1 1.844 1.844v4a1.846 1.846 0 0 1 -1.844 1.844zm-8.156-2h8v-3.688h-8z"/></svg>
         <label class="block text-center text-xxs pt-2 text-gray-600">нет фото</label>
       </div>
-      <div class="bg-cover w-32 h-full rounded-l-sm" style="background-image: url('/cow/roxx/standard_2_removebg.png')"></div>
+      <div v-if="product.img" class="bg-cover w-32 h-full rounded-l-sm"
+      :style="{backgroundImage: 'url(/images/' + product.img + ')'}">
+      </div>
     </section>
 
-    <section class="px-6 p-3">
-      <section class="flex">
-        <div>
-          <h2 class="font-baloo text-gray-500 text-md">{{product.name}}</h2>
-          <h2 class="font-baloo text-orange-500 text-lg text-bold">{{product.type}}</h2>
-        </div>
-        <div class="flex-1 right text-gray-600 hidden md:show">
-          <div class="w-auto right flex text-xxs justify-end pt-2">
-            <h4 class="mr-1">
-              {{product.category}}
-            </h4>
-            <!--h4 class="mx-1">{{product.weight}}</h4-->
-          </div>
-          <div class="w-auto right flex text-xxs  text-orange-500 justify-end pt-2">
-            <h4 class="mr-1"
-              v-for="stage in product.stages"
-              v-bind:key="stage">
-              {{stage}}
-            </h4>
-          </div>
-        </div>
-      </section>
-      <div class="mt-4 h-16 md:h-12 block text-xxs text-gray-700">
+    <section class="px-6 p-3 w-full">
+      <ProductName :product="product"/>
+      <div class="mt-4 h-16 md:h-12 block text-xxs text-gray-700 leading-5">
         {{product.shortDescription}}
       </div>
     </section>

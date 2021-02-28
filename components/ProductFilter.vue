@@ -5,7 +5,7 @@
       <button v-for="item in items" :key="item"
         @click="click(item)"
         class="text-gray-600 py-1 px-2 mx-2
-        hover:text-orange-500 hover:shadow-xs cursor-pointer rounded-sm text-xs"
+        hover:text-orange-500 hover:shadow-xs cursor-pointer rounded-sm text-xxs"
         :class="{'text-orange-500 shadow-xs': selected.indexOf(item) > -1}">
         {{item}}
       </button>

@@ -10,6 +10,7 @@ export interface IProduct {
   code: string;
   name: string;
   type: string;
+  img?: string;
   animals: ANIMAL[];
   category: CATEGORY,
   packing: PACKING,
@@ -18,7 +19,10 @@ export interface IProduct {
   shortDescription: string;
   fullDescription: string;
   gost?: string;
-  dosing: string[];
+  dosing?: string[];
+  specialIstructions?: string[],
+  sideEffects?: string[],
+  applying?: string;
   enhancements: string[];
   composition: string;
   indicators: IIndicator[]

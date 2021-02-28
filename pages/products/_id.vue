@@ -1,13 +1,13 @@
 <template>
-  <section class="container m-auto max-w-4xl w-4xl">
+  <section class="container m-auto max-w-5xl w-5xl">
     <Header/>
-    <section class="px-1 h-screen">
+    <section class="px-1 h-min-screen">
       <Breadcrumbs class="hidden md:flex" :items="breadcrumbs"/>
       <section class="hidden md:flex">
         <ProductFilter :items="categories" :selected="selectedCategories" :onChange="changeCategoryFilter" title="Фильтр по типу"/>
         <ProductFilter class="justify-end" :items="stages" :selected="selectedStages" :onChange="changeStageFilter" title="Фильтр по периоду"/>
       </section>
-      <div class="grid grid-cols-2 gap-6 font-comfortaa">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 font-comfortaa px-4 md:px-4">
         <nuxt-link :to="'/products/' + animalRoute + '/' + product.code" v-for="product in products" v-bind:key="product.code">
           <ProductShort v-bind:product=product></ProductShort>
         </nuxt-link>

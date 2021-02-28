@@ -16,20 +16,23 @@ export enum CATEGORY {
   LICK = 'лизунец',
   DRINK = 'выпойка',
   PROBIOTIC = 'пробиотик',
-  HEALING = 'лечебный корм'
+  HEALING = 'лечебный'
 }
 
 export enum PACKING {
   BAG = 'мешок',
-  BASKET = 'ведро'
+  BASKET = 'ведро',
+  PACKAGE = 'пакет'
 }
 
 export enum STAGE {
+  BOAR = 'производитель',
+  FINISH = 'финиш',
+  CALVING = 'отел',
   BORN = 'молодняк',
   START = 'старт',
-  FINISH = 'финиш',
-  DAIRY = 'дойный',
-  PRENATAL = 'сухостой',
+  LACTATION  = 'дойный',
+  PRENATAL = 'предродовой',
   FATTEING = 'откорм',
   EGGS = 'яйцо',
   BROILER = 'бройлер',

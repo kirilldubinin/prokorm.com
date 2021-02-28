@@ -1,9 +1,9 @@
 <template>
-  <section class="main-navigator">
+  <section class="main-navigator font-comfortaa">
     <!--h1 class="text-center text-gray-600 mt-20 mb-12 uppercase">категории</h1-->
     <ul class="md:flex justify-center">
       <nuxt-link class="" :to="'/products/' + item.url" v-for="item in items" :key="item.code">
-        <li class="main-navigator__item px-4 pt-4 mx-1 inline-block
+        <li class="main-navigator__item px-4 pt-4 pb-4 mx-1 inline-block
                 rounded-md text-center hover:shadow-sm hover:text-orange-400
                 cursor-pointer opacity-75 hover:opacity-100">
           <div class="w-full" v-html="item.svg"/>

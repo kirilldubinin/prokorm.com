@@ -25,6 +25,10 @@ module.exports = {
         },
         fontSize: {
           'xxs': '.60rem'
+        },
+        opacity: {
+          '80': '0.80',
+          '90': '0.90'
         }
       }
     },

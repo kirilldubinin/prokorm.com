@@ -7,17 +7,30 @@ import {
   CLEAR_ALL_FILTERS
 } from '@/store/mutations.type'
 
-import cowProducts from '~/static/data/products/cow'
-import pigProducts from '~/static/data/products/pig'
-import fishProducts from '~/static/data/products/fish'
+import cow_feedy from '~/static/data/products/cow.feedy'
+import cow_roxx from '~/static/data/products/cow.roxx'
+import cow_uddery from '~/static/data/products/cow.uddery'
+import cow_firmix from '~/static/data/products/cow.fitmix'
+
+import pig_havrony from '~/static/data/products/pig.havrony'
+import fish_carp from '~/static/data/products/fish.carp'
+import fish_therapeutic from '~/static/data/products/fish.therapeutic'
+import fish_trout from '~/static/data/products/fish.trout'
 
 import navigatorItems from '~/static/data/navigatorItems'
 
 export const state = () => ({
   products: [
-    ...cowProducts,
-    ...pigProducts,
-    ...fishProducts
+    ...cow_uddery,
+    ...cow_feedy,
+    ...cow_roxx,
+    ...cow_firmix,
+
+    ...pig_havrony,
+
+    ...fish_carp,
+    ...fish_therapeutic,
+    ...fish_trout
   ] as IProduct[],
   categoryFilter: [] as CATEGORY[],
   stageFilter: [] as STAGE[]
@@ -43,9 +56,6 @@ export const mutations: MutationTree<RootState> = {
     } else {
       state.stageFilter.push(stage)
     }
-  },
-  setRoute: (state, name) => {
-    debugger
   }
 }
 
@@ -72,6 +82,12 @@ export const getters: GetterTree<RootState, RootState> = {
       products = products.filter(p => (state.stageFilter.filter(s => p.stages.includes(s)).length))
     }
     return products
+  },
+  productsInterested: (state) => (animal: ANIMAL, currentProductCode: string):IProduct[] => {
+    let products = state.products.filter(p => (p.animals.indexOf(animal) > -1))
+    products = products.filter(p => (p.code !== currentProductCode))
+    const shuffled = products.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, 3);
   },
   product: (state) => (code: string):IProduct => {
     return state.products.filter(p => (p.code === code))[0]
