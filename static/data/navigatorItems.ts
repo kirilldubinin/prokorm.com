@@ -40,7 +40,7 @@ export default [
      </svg>`
    },
    {
-     url: 'horse',
+     url: 'goat',
      animal: ANIMAL.GOAT,
      svg: `<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" id="Layer_1" x="0px" y="0px" viewBox="0 0 514.381 514.381" style="enable-background:new 0 0 514.381 514.381;" xml:space="preserve" width="512" height="512">
        <g id="XMLID_2166_">

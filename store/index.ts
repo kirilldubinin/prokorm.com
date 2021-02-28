@@ -13,9 +13,15 @@ import cow_uddery from '~/static/data/products/cow.uddery'
 import cow_firmix from '~/static/data/products/cow.fitmix'
 
 import pig_havrony from '~/static/data/products/pig.havrony'
+
 import fish_carp from '~/static/data/products/fish.carp'
 import fish_therapeutic from '~/static/data/products/fish.therapeutic'
 import fish_trout from '~/static/data/products/fish.trout'
+
+import sheep_otary from '~/static/data/products/sheep.otary'
+import goat_otary from '~/static/data/products/goat.otary'
+
+import rabbit from '~/static/data/products/rabbit.standard'
 
 import navigatorItems from '~/static/data/navigatorItems'
 
@@ -27,6 +33,11 @@ export const state = () => ({
     ...cow_firmix,
 
     ...pig_havrony,
+
+    ...sheep_otary,
+    ...goat_otary,
+
+    ...rabbit,
 
     ...fish_carp,
     ...fish_therapeutic,

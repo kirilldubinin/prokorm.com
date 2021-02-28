@@ -2,7 +2,7 @@
   <div class="container m-auto max-w-5xl w-5xl font-comfortaa">
     <Header/>
     <section class="px-2">
-      <Breadcrumbs class="hidden md:flex" :items="breadcrumbs"/>
+      <Breadcrumbs class="" :items="breadcrumbs"/>
       <section v-if="!product">
         <h4>Нет такого продукта</h4>
       </section>

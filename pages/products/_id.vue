@@ -2,7 +2,7 @@
   <section class="container m-auto max-w-5xl w-5xl">
     <Header/>
     <section class="px-1 h-min-screen">
-      <Breadcrumbs class="hidden md:flex" :items="breadcrumbs"/>
+      <Breadcrumbs class="mx-2" :items="breadcrumbs"/>
       <section class="hidden md:flex">
         <ProductFilter :items="categories" :selected="selectedCategories" :onChange="changeCategoryFilter" title="Фильтр по типу"/>
         <ProductFilter class="justify-end" :items="stages" :selected="selectedStages" :onChange="changeStageFilter" title="Фильтр по периоду"/>
