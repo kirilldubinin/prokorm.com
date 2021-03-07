@@ -267,13 +267,13 @@ export default [
   E, биотин, витамин А, витамин D3, антиоксидант, йодид калия, кобальт
   карбонат моногидрат, селенит натрия.`,
 }, {
-code: '908219',
+code: '908049',
   name: 'Uddery',
   type: 'Calf Plus',
   category: CATEGORY.PREMIX,
   packing: PACKING.BAG,
   weight: '25 кг',
-  stages: [STAGE.LACTATION],
+  stages: [STAGE.START],
   animals: [ANIMAL.COW],
   shortDescription: 'Витаминно-минеральная добавка (премикс) для телят',
   fullDescription: 'Витаминно-минеральная добавка (премикс) для телят',
