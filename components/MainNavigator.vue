@@ -5,7 +5,8 @@
       <nuxt-link class="" :to="'/products/' + item.url" v-for="item in items" :key="item.code">
         <li class="main-navigator__item px-4 pt-4 pb-4 mx-1 inline-block
                 rounded-md text-center hover:shadow-sm hover:text-orange-400
-                cursor-pointer opacity-75 hover:opacity-100">
+                cursor-pointer opacity-75 hover:opacity-100"
+            :class="{'current-page': item.url === animalRoute}">
           <div class="w-full" v-html="item.svg"/>
           <label class="text-xxs cursor-pointer">{{item.animal}}</label>
         </li>
@@ -19,6 +20,7 @@
   import {INavigatorItem} from '@/models/interfaces'
   export default Vue.extend({
     computed: {
+      animalRoute(): string { return this.$route.params.id },
       items (): INavigatorItem[] {return this.$store.getters.navigatorItems},
     }
   })
@@ -26,6 +28,17 @@
 
 <style lang="scss">
   .main-navigator {
+    .current-page {
+      svg {
+        fill: #f6ad55 !important;
+        path {
+          fill: #f6ad55 !important;
+        }
+      }
+      label {
+        color: #f6ad55 !important;
+      }
+    }
     &__item {
       &:hover {
         svg {

@@ -25,28 +25,28 @@
         <p class="text-xxs leading-4 md:leading-5">{{product.applying}}</p>
       </div>
 
-      <div v-if="product.dosing" class="composition pt-8 text-xs text-gray-700">
+      <div v-if="product.dosing && product.dosing.length" class="composition pt-8 text-xs text-gray-700">
         <h4 class="uppercase text-orange-500 pb-2">дозировка</h4>
         <ul>
           <li v-for="dose in product.dosing" class="text-xxs leading-4 md:leading-5" v-bind:key="dose" v-html="dose"></li>
         </ul>
       </div>
 
-      <div v-if="product.sideEffects" class="composition pt-8 text-xs text-gray-700">
+      <div v-if="product.sideEffects && product.sideEffects.length" class="composition pt-8 text-xs text-gray-700">
         <label class="uppercase block text-orange-500 pb-2">побочные явления</label>
         <ul>
           <li v-for="effect in product.sideEffects" class="text-xxs leading-4 md:leading-5" v-bind:key="effect">{{effect}}</li>
         </ul>
       </div>
 
-      <div v-if="product.specialIstructions" class="composition pt-8 text-xs text-gray-700">
+      <div v-if="product.specialIstructions && product.specialIstructions.length" class="composition pt-8 text-xs text-gray-700">
         <label class="uppercase block text-orange-500 pb-2">особые указания</label>
         <ul>
           <li v-for="specialIstruction in product.specialIstructions" class="text-xxs leading-4 md:leading-5" v-bind:key="specialIstruction">{{specialIstruction}}</li>
         </ul>
       </div>
 
-      <div v-if="product.enhancements" class="composition pt-8 text-xs text-gray-700">
+      <div v-if="product.enhancements && product.enhancements.length" class="composition pt-8 text-xs text-gray-700">
         <label class="uppercase block text-orange-500 pb-2">действие</label>
         <ul>
           <li v-for="enhancement in product.enhancements" class="text-xxs leading-4 md:leading-5" v-bind:key="enhancement">{{enhancement}}</li>
