@@ -53,7 +53,7 @@
         </ul>
       </div>
 
-      <div :class="{'grid-cols-3': product.indicators.length > 2, 'grid-cols-2': product.indicators.length < 2}" class="pt-8 md:grid gap-4 text-xxs text-gray-600">
+      <div :class="{'grid-cols-3': product.indicators.length >= 2, 'grid-cols-2': product.indicators.length < 2}" class="pt-8 md:grid gap-4 text-xxs text-gray-600">
         <div class="mt-2 md:mt-0" v-for="indicator in product.indicators" v-bind:key="indicator.name">
           <ul>
               <li class="leading-5 md:leading-6 flex text-orange-500">

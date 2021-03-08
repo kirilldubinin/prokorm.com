@@ -14,6 +14,10 @@ import cow_firmix from '~/static/data/products/cow.fitmix'
 
 import pig_havrony from '~/static/data/products/pig.havrony'
 
+import chicken_uccelly from '~/static/data/products/chicken.uccelly'
+import goose_uccelly from '~/static/data/products/goose.uccelly'
+import turkey_uccelly from '~/static/data/products/turkey.uccelly'
+
 import fish_carp from '~/static/data/products/fish.carp'
 import fish_therapeutic from '~/static/data/products/fish.therapeutic'
 import fish_trout from '~/static/data/products/fish.trout'
@@ -33,6 +37,11 @@ export const state = () => ({
     ...cow_firmix,
 
     ...pig_havrony,
+
+    ...chicken_uccelly,
+    ...goose_uccelly,
+    ...turkey_uccelly,
+
 
     ...sheep_otary,
     ...goat_otary,

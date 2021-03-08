@@ -6,7 +6,8 @@ export enum ANIMAL {
   FISH = 'рыбы',
   RABBIT = 'кролики',
   GOAT = 'козы',
-  SHEEP = 'овцы'
+  SHEEP = 'овцы',
+  GOOSE = 'гуси'
 }
 
 export enum CATEGORY {
