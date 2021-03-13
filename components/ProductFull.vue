@@ -17,8 +17,7 @@
       <div v-if="product.gost" class="mb-2 gost text-sm text-gray-600">
         {{product.gost}}
       </div>
-      <div class="text-xxs text-gray-700">
-        {{product.fullDescription}}
+      <div class="text-xxs text-gray-700" v-html="product.fullDescription">
       </div>
       <div v-if="product.applying" class="composition pt-8 text-xs text-gray-700">
         <h4 class="uppercase text-orange-500 pb-2">применение</h4>
